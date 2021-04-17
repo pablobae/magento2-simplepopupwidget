@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pablobae" translate="label" sortOrder="10">
+            <label>Pablobae</label>
+        </tab>
+        <section id="simplepopupwidget" showInDefault="1" showInWebsite="1" showInStore="1" translate="label"
+                 sortOrder="10">
+            <label>Simple Popup Widget</label>
+            <tab>pablobae</tab>
+            <resource>Pablobae_SimplePopupWidget::simplepopupwidget_configuration</resource>
+
+            <group id="pablobae_simplepopupwidget_status" translate="label comment" showInDefault="1" showInWebsite="1"
+                   showInStore="1" sortOrder="10">
+                <label>Module status</label>
+                <comment>Config extension to be enabled or disabled</comment>
+
+                <field id="pablobae_simplepopupwidget_status_status" type="select" translate="label comment"
+                       showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Status</label>
+                    <comment>Enable or disable the extension</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="pablobae_simplepopupwidget_design" translate="label comment" showInDefault="1" showInWebsite="1"
+                   showInStore="1"
+                   sortOrder="20">
+                <label>Design settings</label>
+                <comment>Settings to define default custom CSS class...</comment>
+
+                <field id="pablobae_simplepopupwidget_design_customcssclass" type="text" translate="label comment"
+                       showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Custom CSS class</label>
+                    <comment>Enter your own css class to customize the popup css styles in your own CSS file.</comment>
+                    <validate>letters-only</validate>
+                </field>
+            </group>
+            <group id="pablobae_simplepopupwidget_behavior" translate="label comment" showInDefault="1"
+                   showInWebsite="1" showInStore="1" sortOrder="30">
+                <label>Behavior settings</label>
+                <comment>In this section you can configure the behavior of the popups</comment>
+
+                <field id="pablobae_simplepopupwidget_behavior_popupinittime" type="text" translate="label comment"
+                       showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Popup Init Time</label>
+                    <comment>Enter the number of seconds after which the popup will be shown</comment>
+                    <validate>required-entry integer</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

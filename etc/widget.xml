@@ -1,0 +1,46 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Pablobae\SimplePopupWidget\Block\Widget\SimplePopup" id="simplepopupwidget">
+        <label>Simple PopUp</label>
+        <description>Simple and Flexible popup widget</description>
+        <parameters>
+            <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="20">
+                <label translate="true">Block</label>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="specificCssClass" xsi:type="text" visible="true" sort_order="20">
+                <label translate="true">Specific CSS Class</label>
+            </parameter>
+            <parameter name="addLink" xsi:type="select" visible="true" required="true" sort_order="30">
+                <label translate="true">Add Link</label>
+                <options>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="yes" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="linkText" xsi:type="text" visible="true" sort_order="40">
+                <label translate="true">Link Text</label>
+                <depends>
+                    <parameter name="addLink" value="1"/>
+                </depends>
+            </parameter>
+            <parameter name="link" xsi:type="text" visible="true" sort_order="50">
+                <label translate="true">URL</label>
+                <depends>
+                    <parameter name="addLink" value="1"/>
+                </depends>
+            </parameter>
+
+        </parameters>
+    </widget>
+</widgets>

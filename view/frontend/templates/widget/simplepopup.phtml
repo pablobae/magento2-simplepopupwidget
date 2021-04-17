@@ -1,0 +1,38 @@
+<?php
+declare(strict_types=1);
+
+use Pablobae\SimplePopupWidget\Block\Widget\SimplePopup;
+
+/* @var SimplePopup $block */
+
+if ($block->isExtensionEnabled()) {
+    $popupInitTime = $block->getDefaultPopupInitTime();
+    $hasLink = false;
+    if ($block->escapeHtml($block->getData('addLink')) == 1) {
+        $hasLink = true;
+    } ?>
+    <!-- SIMPLE POPUP -->
+    <div class="simplepopup">
+        <div class="simplepopup-content">
+            <!-- CLOSING BUTTON-->
+            <span class="close">&times;</span>
+            <!-- END CLOSING BUTTON-->
+            <?php if ($hasLink) { ?>
+            <a class="simplepopup-link" href="<?= $block->escapeHtml($block->getData('link')) ?>"
+               title="<?= $block->escapeHtml($block->getData('linkText')) ?>">
+                <?php } ?>
+                <div
+                    class="simplepopup-block-content <?= $block->getDefaultCustomCSSClass() . ' ' . $block->escapeHtml($block->getData('specificCssClass')) ?>">
+                    <!-- POPUP CONTENT -->
+                    <?= $block->getPopupBlockContent(); ?>
+                    <!-- END POPUP CONTENT -->
+                </div>
+                <?php if ($hasLink) { ?>
+            </a>
+        <?php } ?>
+        </div>
+    </div>
+    <!-- END SIMPLE POPUP -->
+    <div data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>" }}'></div>
+    <?php
+} ?>
