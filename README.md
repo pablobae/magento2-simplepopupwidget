@@ -40,7 +40,7 @@ Go to the root folder of your Magento installation and run the following command
 
 ```
 mkdir -p app/code/Pablobae
-git clone git@github.com:pablobae/dockerized-magento2-devel-environment.git app/code/Pablobae/SimplePopupWidget
+git clone https://github.com/pablobae/magento2-simplepopupwidget.git app/code/Pablobae/SimplePopupWidget
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
@@ -109,6 +109,9 @@ Go to **Content** > **Widgets** and add a new widget clicking on the **Add Widge
 ### 3. Cache cleaning
 
 Finally, clean Magento cache, and visit the page where you have configured your popup to be shown.
+
+## ChangeLog
+[CHANGELOG.md](CHANGELOG.md)
 
 ## Developers
 

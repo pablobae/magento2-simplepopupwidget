@@ -1,0 +1,22 @@
+Pablobae,Pablobae
+"Simple Popup Widget","Simple Popup Widget"
+"Module status","Module status"
+"Config extension to be enabled or disabled","Config extension to be enabled or disabled"
+Status,Status
+"Enable or disable the extension","Enable or disable the extension"
+"Design settings","Design settings"
+"Settings to define default custom CSS class...","Settings to define default custom CSS class..."
+"Custom CSS class","Custom CSS class"
+"Enter your own css class to customize the popup css styles in your own CSS file.","Enter your own css class to customize the popup css styles in your own CSS file."
+"Behavior settings","Behavior settings"
+"In this section you can configure the behavior of the popups","In this section you can configure the behavior of the popups"
+"Popup Init Time","Popup Init Time"
+"Enter the number of seconds after which the popup will be shown","Enter the number of seconds after which the popup will be shown"
+Block,Block
+"Select Block...","Select Block..."
+"Specific CSS Class","Specific CSS Class"
+"Add Link","Add Link"
+No,No
+Yes,Yes
+"Link Text","Link Text"
+URL,URL
