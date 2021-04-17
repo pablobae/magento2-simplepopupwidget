@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <simplepopupwidget>
+            <pablobae_simplepopupwidget_status>
+                <pablobae_simplepopupwidget_status_status>0</pablobae_simplepopupwidget_status_status>
+            </pablobae_simplepopupwidget_status>
+            <pablobae_simplepopupwidget_behavior>
+                <pablobae_simplepopupwidget_behavior_popupinittime>6</pablobae_simplepopupwidget_behavior_popupinittime>
+            </pablobae_simplepopupwidget_behavior>
+        </simplepopupwidget>
+    </default>
+</config>
