@@ -2,7 +2,7 @@
     "name": "pablobae/magento2-simplepopupwidget",
     "description": "Magento2 Simple Popups Widgets",
     "type": "magento2-module",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Pablo Baenas",
