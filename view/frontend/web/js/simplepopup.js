@@ -1,8 +1,12 @@
 define([
-        "jquery"
+        "jquery",
+        "jquery/jquery.cookie"
     ], function ($) {
         "use strict";
         return function (config, element) {
+            let options = {
+                cookieName: 'simplepopup'
+            };
 
             function hidePopup() {
                 $('.simplepopup').hide();
@@ -12,13 +16,32 @@ define([
                 $('.simplepopup').show();
             }
 
-            function initPopup() {
-                showPopup();
+            function createCookie(cookieName) {
+                $.cookie(cookieName, 'dontShow', {expires: 15, path: '/'});
             }
 
-            $('.simplepopup .close').on('click', hidePopup);
+            function removeCookie(cookieName) {
+                $.cookie(cookieName, 'dontShow', {expires: -1, path: '/'});
+            }
 
-            setTimeout(initPopup, config.popupInitTime * 1000)
+            function initPopup() {
+                let dontShowCookie = $.cookie(options.cookieName);
+
+                if (! dontShowCookie) {
+                    $('.simplepopup .close').on('click', hidePopup);
+                    $('#dontShow').change(function () {
+                        if (this.checked) {
+                            createCookie(options.cookieName);
+                        } else {
+                            removeCookie(options.cookieName);
+                        }
+                    })
+
+                    setTimeout(showPopup, config.popupInitTime * 1000)
+                }
+            }
+
+            initPopup();
         }
     }
 )

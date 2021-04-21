@@ -6,6 +6,7 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 ### Added
+* Added don't show again feature
 ### Changed
 ### Removed
 
