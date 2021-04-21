@@ -43,5 +43,12 @@
 
 /* The block content */
 .simplepopup .simplepopup-content .simplepopup-block-content {
-    margin: 20px;
+    margin: 2rem;
+}
+
+/** The don't show checkbox  */
+.simplepopup .dontShowFeature {
+    position:absolute;
+    bottom:0.5rem;
+    left:2rem;
 }
