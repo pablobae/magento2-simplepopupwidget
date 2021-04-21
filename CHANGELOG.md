@@ -6,11 +6,13 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 ### Added
-* Added don't show again feature
-* Added specific container layout to be used with the extension
-
 ### Changed
 ### Removed
+
+## [1.0.2] - 21-04-2021
+### Added
+* Added don't show again feature
+* Added specific container layout to be used with the extension
 
 ## [1.0.1] - 17-04-2021
 ### Added
