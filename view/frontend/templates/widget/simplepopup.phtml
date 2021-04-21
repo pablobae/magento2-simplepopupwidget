@@ -29,6 +29,13 @@ if ($block->isExtensionEnabled()) {
                 </div>
                 <?php if ($hasLink) { ?>
             </a>
+            <!-- DON'T SHOW AGAIN BUTTON -->
+            <div class="dontShowFeature">
+                <form>
+                  <input type="checkbox" id="dontShow" />   <label for="dontShow"><?php echo __("Don't show again");?></label>
+                </form>
+            </div>
+            <!-- END DON'T SHOW AGAIN BUTTON -->
         <?php } ?>
         </div>
     </div>
