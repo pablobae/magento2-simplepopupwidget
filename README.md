@@ -2,7 +2,7 @@
 
 ___
 
-![alt Simple Popup extension for Magento 2](https://raw.githubusercontent.com/pablobae/markdown-images/master/magento2-simplepopupwidget/magento2-simplepopupwidget-header.jpg?raw=true "Simple Popup Widget for Magento 2")
+![alt Simple Popup extension for Magento 2](https://raw.githubusercontent.com/pablobae/markdown-images/master/magento2-simplepopupwidget/magento2-simplepopupwidget-header.png?raw=true "Simple Popup Widget for Magento 2")
 
 # Table of Contents
 
@@ -31,6 +31,7 @@ ___
 * supports custom CSS styles
 * Popup behaviour configurable
 * Popups in any magento 2 page, category or product
+* Internationalization support
 
 ## Installation
 
@@ -87,17 +88,16 @@ Go to **Content** > **Widgets** and add a new widget clicking on the **Add Widge
     * To show it in **CMS Pages**:
         * Select **All Pages** or **Specific pages**. If you have select **Specific pages** then you must also select
           your desired page
-        * In the **Container** dropdown, select any of them (**After page** header, for example)
+        * In the **Container** dropdown, select **Simple Popup Container**
     * To show it in **Products** pages:
         * Select **All Products** or any of the options of specific product types **Specific pages**.
         * Now, you can choose if you want that the popup will be shown on **All** products, or you can select **Specific
           Products**
-        * In the **Container** dropdown, select any of them (**After page** header, for example)
+        * In the **Container** dropdown, select **Simple Popup Container**
     * To show it in **Categories**:
         * Select **Non-anchor categories**
-        * Now, you can choose if you want that the popup will be shown on **All** the categories, or you can select **
-          Specific Categories**
-        * In the **Container** dropdown, select any of them (**After page** header, for example)
+        * Now, you can choose if you want that the popup will be shown on **All** the categories, or you can select **Specific Categories**
+         * In the **Container** dropdown, select **Simple Popup Container**
 * Click now the **Widget Options** tab on the left side of the page
 * Click the **Select Block...* button and select the block created previously
 * If you want to add specific css styles to this popup then add a **Specific CSS Class** and implement in your css file
