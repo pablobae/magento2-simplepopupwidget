@@ -37,6 +37,23 @@ ___
 
 ___
 
+### Installation with composer
+To install this extension with composer go to your project root folder and run the following command
+```
+composer require pablobae/magento2-simplepopupwidget
+```
+
+Once the extension package is installed, run this Magento commands:
+```
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-files:deploy
+php bin/magento cache:clean
+php bin/magneto cache:flush
+```
+That's all!
+
+### Installation manually
 Go to the root folder of your Magento installation and run the following commands:
 
 ```
