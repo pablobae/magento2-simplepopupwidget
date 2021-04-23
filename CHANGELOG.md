@@ -9,6 +9,12 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 ### Changed
 ### Removed
 
+## [1.0.4] - 23-04-2021
+### Added
+* Support for composer installation
+* Fixed don't show feature only displayed if popup link is enabled
+* Added missing PHPDoc
+
 ## [1.0.3] - 22-04-2021
 ### Added
 * Support for compaser packag
