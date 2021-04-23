@@ -40,7 +40,8 @@ class SimplePopup extends Template implements BlockInterface
         StoreManagerInterface $storeManager,
         Template\Context $context,
         array $data = []
-    ) {
+    )
+    {
         $this->helperConfiguration = $helperConfiguration;
         $this->storeManager = $storeManager;
         parent::__construct($context, $data);
@@ -56,16 +57,28 @@ class SimplePopup extends Template implements BlockInterface
         return $this->helperConfiguration->isEnabled();
     }
 
+    /**
+     * Retrieve extension config value for CustomCSS Class
+     * @return string
+     */
     public function getDefaultCustomCSSClass(): string
     {
         return $this->helperConfiguration->getCustomCssClass();
     }
 
+    /**
+     * Retrieve extension config value for PopupInitTime
+     * @return string
+     */
     public function getDefaultPopupInitTime(): string
     {
         return $this->helperConfiguration->getPopupInitTime();
     }
 
+    /**
+     * Retrieve popup cms static block content
+     * @return string
+     */
     public function getPopupBlockContent(): string
     {
         $blockId = $this->getWidgetPopupBlockContentId();
@@ -81,6 +94,10 @@ class SimplePopup extends Template implements BlockInterface
         return '';
     }
 
+    /**
+     * Retrieve popup Block content ID
+     * @return string
+     */
     protected function getWidgetPopupBlockContentId(): string
     {
         return $this->getData(self::WIDGET_OPTION_BLOCK);
