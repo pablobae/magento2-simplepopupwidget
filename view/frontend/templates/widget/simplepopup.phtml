@@ -10,13 +10,13 @@ if ($block->isExtensionEnabled()) {
     if ($popupInitTime === null || $popupInitTime == "") {
         $popupInitTime = $block->getDefaultPopupInitTime();
     }
-
+    $staticBlockId = $block->getBlockId();
     $hasLink = false;
     if ($block->escapeHtml($block->getData('addLink')) == 1) {
         $hasLink = true;
     } ?>
     <!-- SIMPLE POPUP -->
-    <div class="simplepopup">
+    <div class="simplepopup <?= $staticBlockId;?>">
         <div class="simplepopup-content">
             <!-- CLOSING BUTTON-->
             <span class="close">&times;</span>
@@ -46,6 +46,6 @@ if ($block->isExtensionEnabled()) {
     </div>
     <!-- END SIMPLE POPUP -->
     <div
-        data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>"}}'></div>
+        data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>", "blockId": "<?= $staticBlockId; ?>" }}'></div>
     <?php
 } ?>
