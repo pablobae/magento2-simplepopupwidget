@@ -89,6 +89,7 @@ class SimplePopup extends Template implements BlockInterface
                     ->setBlockId($blockId)
                     ->toHtml();
             } catch (LocalizedException $e) {
+                $this->_logger->error(__("Popup Block not found."));
             }
         }
         return '';
@@ -102,4 +103,7 @@ class SimplePopup extends Template implements BlockInterface
     {
         return $this->getData(self::WIDGET_OPTION_BLOCK);
     }
+
+
+
 }
