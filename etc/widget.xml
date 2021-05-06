@@ -16,6 +16,11 @@
             </parameter>
             <parameter name="specificCssClass" xsi:type="text" visible="true" sort_order="20">
                 <label translate="true">Specific CSS Class</label>
+                <description translate="true">Override the default CSS Class value</description>
+            </parameter>
+            <parameter name="specificPopupInitTime" xsi:type="text" visible="true" sort_order="20">
+                <label translate="true">Specific Popup Init Time</label>
+                <description translate="true">Override the default Popup Init Time value (seconds)</description>
             </parameter>
             <parameter name="addLink" xsi:type="select" visible="true" required="true" sort_order="30">
                 <label translate="true">Add Link</label>

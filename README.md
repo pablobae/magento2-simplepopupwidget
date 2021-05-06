@@ -31,6 +31,7 @@ ___
 * supports custom CSS styles
 * Popup behaviour configurable
 * Popups in any magento 2 page, category or product
+* Multiple popups per page
 * Internationalization support
 
 ## Installation

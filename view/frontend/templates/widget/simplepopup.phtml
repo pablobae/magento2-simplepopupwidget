@@ -6,13 +6,17 @@ use Pablobae\SimplePopupWidget\Block\Widget\SimplePopup;
 /* @var SimplePopup $block */
 
 if ($block->isExtensionEnabled()) {
-    $popupInitTime = $block->getDefaultPopupInitTime();
+    $popupInitTime = $block->escapeHtml($block->getData('specificPopupInitTime'));
+    if ($popupInitTime === null || $popupInitTime == "") {
+        $popupInitTime = $block->getDefaultPopupInitTime();
+    }
+    $staticBlockId = $block->getBlockId();
     $hasLink = false;
     if ($block->escapeHtml($block->getData('addLink')) == 1) {
         $hasLink = true;
     } ?>
     <!-- SIMPLE POPUP -->
-    <div class="simplepopup">
+    <div class="simplepopup <?= $staticBlockId;?>">
         <div class="simplepopup-content">
             <!-- CLOSING BUTTON-->
             <span class="close">&times;</span>
@@ -29,17 +33,19 @@ if ($block->isExtensionEnabled()) {
                 </div>
                 <?php if ($hasLink) { ?>
             </a>
-            <?php } ?>
+        <?php } ?>
             <!-- DON'T SHOW AGAIN BUTTON -->
             <div class="dontShowFeature">
                 <form>
-                  <input type="checkbox" id="dontShow" />   <label for="dontShow"><?php echo __("Don't show again");?></label>
+                    <input type="checkbox" id="dontShow"/> <label
+                        for="dontShow"><?php echo __("Don't show again"); ?></label>
                 </form>
             </div>
             <!-- END DON'T SHOW AGAIN BUTTON -->
         </div>
     </div>
     <!-- END SIMPLE POPUP -->
-    <div data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>" }}'></div>
+    <div
+        data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>", "blockId": "<?= $staticBlockId; ?>" }}'></div>
     <?php
 } ?>
