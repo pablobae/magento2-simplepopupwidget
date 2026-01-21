@@ -7,7 +7,8 @@ define([
         let options = {
             blockId: config.blockId,
             cookieName: 'simplepopupblock' + config.blockId,
-            popupInitTime: config.popupInitTime
+            popupInitTime: config.popupInitTime,
+            cookieExpiryDays: config.cookieExpiryDays || 15
         };
 
         function hidePopup() {
@@ -19,11 +20,11 @@ define([
         }
 
         function createCookie(cookieName) {
-            $.cookie(cookieName, 'dontShow', {expires: 15, path: '/'});
+            $.cookie(cookieName, 'dontShow', { expires: parseInt(options.cookieExpiryDays), path: '/' });
         }
 
         function removeCookie(cookieName) {
-            $.cookie(cookieName, 'dontShow', {expires: -1, path: '/'});
+            $.cookie(cookieName, 'dontShow', { expires: -1, path: '/' });
         }
 
         function initPopup() {

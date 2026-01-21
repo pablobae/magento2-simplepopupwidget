@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Pablobae\SimplePopupWidget\Block\Widget;
@@ -40,8 +41,7 @@ class SimplePopup extends Template implements BlockInterface
         StoreManagerInterface $storeManager,
         Template\Context $context,
         array $data = []
-    )
-    {
+    ) {
         $this->helperConfiguration = $helperConfiguration;
         $this->storeManager = $storeManager;
         parent::__construct($context, $data);
@@ -76,6 +76,15 @@ class SimplePopup extends Template implements BlockInterface
     }
 
     /**
+     * Retrieve extension config value for Cookie Expiry Days
+     * @return string
+     */
+    public function getDefaultCookieExpiryDays(): string
+    {
+        return $this->helperConfiguration->getCookieExpiryDays();
+    }
+
+    /**
      * Retrieve popup cms static block content
      * @return string
      */
@@ -103,7 +112,4 @@ class SimplePopup extends Template implements BlockInterface
     {
         return $this->getData(self::WIDGET_OPTION_BLOCK);
     }
-
-
-
 }

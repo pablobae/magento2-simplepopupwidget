@@ -48,6 +48,12 @@
                     <comment>Enter the number of seconds after which the popup will be shown</comment>
                     <validate>required-entry integer</validate>
                 </field>
+                <field id="pablobae_simplepopupwidget_behavior_cookieexpirydays" type="text" translate="label comment"
+                       showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                    <label>Cookie Expiry Days</label>
+                    <comment>Enter the number of days the "Don't show again" cookie should last (default: 15)</comment>
+                    <validate>required-entry integer</validate>
+                </field>
             </group>
         </section>
     </system>
