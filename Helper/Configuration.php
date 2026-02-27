@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Pablobae\SimplePopupWidget\Helper;
@@ -21,6 +22,7 @@ class Configuration extends AbstractHelper
     const XML_PATH_FIELD_STATUS_STATUS = 'pablobae_simplepopupwidget_status_status';
     const XML_PATH_FIELD_DESIGN_CSS_CUSTOM_CLASS = 'pablobae_simplepopupwidget_design_customcssclass';
     const XML_PATH_GROUP_BEHAVIOR_POPUPINITTIME = 'pablobae_simplepopupwidget_behavior_popupinittime';
+    const XML_PATH_GROUP_BEHAVIOR_COOKIEEXPIRYDAYS = 'pablobae_simplepopupwidget_behavior_cookieexpirydays';
 
     /**
      * @var StoreManagerInterface
@@ -35,8 +37,7 @@ class Configuration extends AbstractHelper
     public function __construct(
         StoreManagerInterface $storeManager,
         Context $context
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->storeManager = $storeManager;
     }
@@ -124,5 +125,28 @@ class Configuration extends AbstractHelper
         }
 
         return $time;
+    }
+
+    /**
+     * Retrieve cookie expiry days
+     *
+     * @return string
+     */
+    public function getCookieExpiryDays(): string
+    {
+        $days = '15';
+        $fieldPath = self::XML_PATH_SECTION . self::XML_PATH_GROUP_BEHAVIOR
+            . self::XML_PATH_GROUP_BEHAVIOR_COOKIEEXPIRYDAYS;
+
+        try {
+            $value = $this->getConfigValue($fieldPath, (int)$this->storeManager->getStore()->getId());
+            if ($value !== null) {
+                $days = $value;
+            }
+        } catch (NoSuchEntityException $e) {
+            $this->_logger->critical($e->getMessage());
+        }
+
+        return $days;
     }
 }

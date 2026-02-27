@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Pablobae\SimplePopupWidget\Block\Widget\SimplePopup;
@@ -16,14 +17,14 @@ if ($block->isExtensionEnabled()) {
         $hasLink = true;
     } ?>
     <!-- SIMPLE POPUP -->
-    <div class="simplepopup <?= $staticBlockId;?>">
+    <div class="simplepopup <?= $staticBlockId; ?>">
         <div class="simplepopup-content">
             <!-- CLOSING BUTTON-->
             <span class="close">&times;</span>
             <!-- END CLOSING BUTTON-->
             <?php if ($hasLink) { ?>
-            <a class="simplepopup-link" href="<?= $block->escapeHtml($block->getData('link')) ?>"
-               title="<?= $block->escapeHtml($block->getData('linkText')) ?>">
+                <a class="simplepopup-link" href="<?= $block->escapeHtml($block->getData('link')) ?>"
+                    title="<?= $block->escapeHtml($block->getData('linkText')) ?>">
                 <?php } ?>
                 <div
                     class="simplepopup-block-content <?= $block->getDefaultCustomCSSClass() . ' ' . $block->escapeHtml($block->getData('specificCssClass')) ?>">
@@ -32,12 +33,12 @@ if ($block->isExtensionEnabled()) {
                     <!-- END POPUP CONTENT -->
                 </div>
                 <?php if ($hasLink) { ?>
-            </a>
-        <?php } ?>
+                </a>
+            <?php } ?>
             <!-- DON'T SHOW AGAIN BUTTON -->
             <div class="dontShowFeature">
                 <form>
-                    <input type="checkbox" id="dontShow"/> <label
+                    <input type="checkbox" id="dontShow" /> <label
                         for="dontShow"><?php echo __("Don't show again"); ?></label>
                 </form>
             </div>
@@ -45,7 +46,10 @@ if ($block->isExtensionEnabled()) {
         </div>
     </div>
     <!-- END SIMPLE POPUP -->
-    <div
-        data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>", "blockId": "<?= $staticBlockId; ?>" }}'></div>
     <?php
+    $cookieExpiryDays = $block->getDefaultCookieExpiryDays();
+    ?>
+    <div
+        data-mage-init='{"simplepopup":  {"popupInitTime": "<?= $popupInitTime ?>", "blockId": "<?= $staticBlockId; ?>", "cookieExpiryDays": "<?= $cookieExpiryDays; ?>" }}'></div>
+<?php
 } ?>
